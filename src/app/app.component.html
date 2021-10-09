@@ -1,0 +1,16 @@
+<form [formGroup]="heroForm" (ngSubmit)="onSubmit()">
+
+<p>
+<label for="lastname">Hero Name: </label>
+<input type="text" id="heroname" name="heroname" formControlName="heroname">
+</p>
+
+<p>
+<button type="submit" [disabled]="!heroForm.valid">Submit</button>
+</p>
+
+</form>
+<ul>
+  <li *ngFor="let film of films|async">{{film.title}} - {{film.release_date | date:'fullDate'}}
+  </li>
+</ul>
